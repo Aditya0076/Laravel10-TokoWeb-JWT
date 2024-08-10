@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::post('/login', [AuthController::class, 'login']);
 // We use group so we can apply middleware auth api to all the routes within the group
 Route::middleware('auth:api')->group(function() {
     Route::get('/me', [UserController::class, 'me']);
+    Route::get('/category-products', [ProductController::class, 'getCategoryProducts']);
+    Route::get('/products', [ProductController::class, 'getProducts']);
+    Route::post('/products', [ProductController::class, 'createProduct']);
 });
 
 Route::post('/logout', [AuthController::class, 'logout']);
