@@ -9,8 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 
 /**
  * @OA\Info(
- *    title="My Cool API",
- *    description="An API of cool stuffs",
+ *    title="Toko Online API",
+ *    description="API documentation for Toko Online",
  *    version="1.0.0",
  * ),
  * @OA\SecurityScheme(
